@@ -1,0 +1,11 @@
+const fs = require('fs');
+const f = 'src/app/index.tsx';
+let t = fs.readFileSync(f, 'utf8');
+const r = (a, b) => { if (!t.includes(a)) console.log('skipped:', a.slice(0, 40)); t = t.replace(a, b); };
+r("  const { width } = useWindowDimensions();\n  const size = (width - 4) / 3;\n", "");
+r(", useWindowDimensions, View }", ", View }");
+r("style={{ width: size, height: size * 1.33, backgroundColor: '#2a2d32' }}>", "style={s.tile}>");
+r("style={StyleSheet.absoluteFill} resizeMode=\"cover\"", "style={s.tileImg} resizeMode=\"cover\"");
+r("  tr: {", "  tile: { width: '32.8%', aspectRatio: 0.75, backgroundColor: '#2a2d32', overflow: 'hidden' },\n  tileImg: { width: '100%', height: '100%' },\n  tr: {");
+fs.writeFileSync(f, t);
+console.log('patched');
