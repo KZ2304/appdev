@@ -23,12 +23,12 @@ const TILES = [
   { views: 676, pinned: true },
   { views: 2062, pinned: true },
   { views: 561, pinned: true },
-  { multi: true },
-  { multi: true },
-  { multi: true },
-  { multi: true },
-  { multi: true },
-  { multi: true },
+  { views: 256, multi: true },
+  { views: 512, multi: true },
+  { views: 128, multi: true },
+  { views: 1383, multi: true },
+  { views: 456, multi: true },
+  { views: 3211, multi: true },
 ];
 
 const TABS = ['grid-outline', 'play-circle-outline', 'repeat-outline', 'person-circle-outline'] as const;
